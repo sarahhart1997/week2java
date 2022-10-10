@@ -43,14 +43,22 @@ public class Main extends javax.swing.JFrame {
         try {
             setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
             getContentPane().setLayout(null);
+            // Add field 1 to the window
             JTextField field1 = new JTextField();
             field1.setBounds(20, 60, 25, 21);
             add(field1);
-
-            // Window has 3 text fields
-    JTextField field2 = new JTextField();
-    JTextField field3 = new JTextField();
-
+            // Add field 2 to the window
+            JTextField field2 = new JTextField();
+            field2.setBounds(120, 60, 25, 21);
+            add(field2);
+            // Add = sign label to the window
+            JLabel equalsign = new JLabel("=");
+            equalsign.setBounds(150, 60, 25, 21);
+            add(equalsign);
+            // Add field 3
+            JTextField field3 = new JTextField();
+            field3.setBounds (170, 60, 25, 21);
+            add(field3);
     // When mouse clicks after text field immediately convert from string to Int.
     // public void field1MouseClicked(java.awt.event.MouseEvent evt) {
     //    String text = field1.getText();
