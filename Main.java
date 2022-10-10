@@ -12,7 +12,6 @@ import javax.swing.SwingUtilities;
 import javax.swing.*;
 
 public class Main extends javax.swing.JFrame {
-// Design a window interface
 // Light shade as a background color 
 
 // Window has 4 radio buttons (+, -, *, /)
@@ -60,22 +59,13 @@ public class Main extends javax.swing.JFrame {
             JTextField field3 = new JTextField();
             field3.setBounds (260, 60, 25, 30);
             add(field3);
-    // When mouse clicks after text field immediately convert from string to Int.
-    // public void field1MouseClicked(java.awt.event.MouseEvent evt) {
-    //    String text = field1.getText();
-    //    int a = Integer.parseInt(text);
-    // }
 
-    // private void field2MouseClicked(java.awt.event.MouseEvent evt) {
-    //     String text = field2.getText();
-    //     int b = Integer.parseInt(text);
-    // }
-
+            // Create the radio buttons
             {
                 jRadioButtonPlus = new JRadioButton();
                 getContentPane().add(jRadioButtonPlus);
                 jRadioButtonPlus.setText("+");
-                // x, y, weight, height
+                // x, y, width, height
                 jRadioButtonPlus.setBounds(80, 26, 135, 20);
                 getButtonGroup().add(jRadioButtonPlus);
                 jRadioButtonPlus.addActionListener(new ActionListener() {
