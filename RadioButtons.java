@@ -2,12 +2,12 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ButtonGroup;
-import javax.swing.Jbutton;
+import javax.swing.JButton;
 import javax.swing.JRadioButton;
 import javax.swing.WindowConstants;
 import javax.swing.event.AncestorEvent;
 import javax.swing.event.AncestorListener;
-import javax.swing.SwingUtilities; 
+import javax.swing.SwingUtilities;
 
 // Design a window interface
 // Light shade as a background color 
@@ -53,7 +53,7 @@ public class RadioButtons extends javax.swing.JFrame {
                 // x, y, weight, height
                 jRadioButtonPlus.setBounds(32, 26, 135, 20);
                 getButtonGroup().add(jRadioButtonPlus);
-                jRadioButtonPlus.addActionListener(new ActionListner() {
+                jRadioButtonPlus.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent evt) {
                         jRadioButtonPlusActionPerformed(evt);
                     }
@@ -84,7 +84,7 @@ public class RadioButtons extends javax.swing.JFrame {
                 });
             }
             {
-                jRadioButtonDiv = new jRadioButtonDiv();
+                jRadioButtonDiv = new JRadioButton();
                 getContentPane().add(jRadioButtonDiv);
                 jRadioButtonDiv.setText("/");
                 jRadioButtonDiv.setBounds(32, 131, 144, 20);
@@ -100,6 +100,13 @@ public class RadioButtons extends javax.swing.JFrame {
 
         }
     }
+    private ButtonGroup getButtonGroup() {
+		if(buttonGroup == null) {
+			buttonGroup = new ButtonGroup();
+		}
+		return buttonGroup;
+	}
+
 }
 // A label for the equality sign
 
