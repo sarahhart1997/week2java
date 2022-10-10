@@ -12,13 +12,27 @@ import javax.swing.event.AncestorListener;
 import javax.swing.SwingUtilities;
 import javax.swing.*;
 
+public class Main extends javax.swing.JFrame {
 // Design a window interface
 // Light shade as a background color 
 
 // Window has 3 text fields
+    JTextField field1 = new JTextField();
+    JTextField field2 = new JTextField();
+    JTextField field3 = new JTextField();
+
+    // When mouse clicks after text field immediately convert from sting to Int.
+    public void field1MouseClicked(java.awt.event.MouseEvent evt) {
+       String text = field1.getText();
+       int a = Integer.parseInt(text);
+    }
+
+    private void field2MouseClicked(java.awt.event.MouseEvent evt) {
+        String text = field2.getText();
+        int b = Integer.parseInt(text);
+    }
 
 // Window has 4 radio buttons (+, -, *, /)
-public class Main extends javax.swing.JFrame {
     private JRadioButton jRadioButtonPlus;
     private JRadioButton jRadioButtonSub;
     private JRadioButton jRadioButtonMulti;
