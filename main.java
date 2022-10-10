@@ -95,6 +95,9 @@ public class RadioButtons extends javax.swing.JFrame {
                     }
                 });
             }
+
+            // Making sure the selection moves between jButtons???
+
         }
     }
 }
