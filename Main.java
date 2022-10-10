@@ -12,7 +12,6 @@ import javax.swing.SwingUtilities;
 import javax.swing.*;
 
 public class Main extends javax.swing.JFrame implements ActionListener {
-// Light shade as a background color 
 
 // Window has 4 radio buttons (+, -, *, /)
     private JRadioButton jRadioButtonPlus;
