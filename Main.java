@@ -50,15 +50,15 @@ public class Main extends javax.swing.JFrame {
             add(field1);
             // Add field 2 to the window
             JTextField field2 = new JTextField();
-            field2.setBounds(120, 60, 25, 30);
+            field2.setBounds(140, 60, 25, 30);
             add(field2);
             // Add = sign label to the window
             JLabel equalsign = new JLabel("=");
-            equalsign.setBounds(150, 60, 30, 30);
+            equalsign.setBounds(200, 60, 30, 30);
             add(equalsign);
             // Add field 3
             JTextField field3 = new JTextField();
-            field3.setBounds (170, 60, 25, 30);
+            field3.setBounds (260, 60, 25, 30);
             add(field3);
     // When mouse clicks after text field immediately convert from string to Int.
     // public void field1MouseClicked(java.awt.event.MouseEvent evt) {
@@ -76,7 +76,7 @@ public class Main extends javax.swing.JFrame {
                 getContentPane().add(jRadioButtonPlus);
                 jRadioButtonPlus.setText("+");
                 // x, y, weight, height
-                jRadioButtonPlus.setBounds(60, 26, 135, 20);
+                jRadioButtonPlus.setBounds(80, 26, 135, 20);
                 getButtonGroup().add(jRadioButtonPlus);
                 jRadioButtonPlus.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent evt) {
@@ -88,7 +88,7 @@ public class Main extends javax.swing.JFrame {
                 jRadioButtonSub = new JRadioButton();
                 getContentPane().add(jRadioButtonSub);
                 jRadioButtonSub.setText("-");
-                jRadioButtonSub.setBounds(60, 61, 135, 20);
+                jRadioButtonSub.setBounds(80, 61, 135, 20);
                 getButtonGroup().add(jRadioButtonSub);
                 jRadioButtonSub.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent evt) {
@@ -100,7 +100,7 @@ public class Main extends javax.swing.JFrame {
                 jRadioButtonMulti = new JRadioButton();
                 getContentPane().add(jRadioButtonMulti);
                 jRadioButtonMulti.setText("*");
-                jRadioButtonMulti.setBounds(60, 96, 135, 20);
+                jRadioButtonMulti.setBounds(80, 96, 135, 20);
                 getButtonGroup().add(jRadioButtonMulti);
                 jRadioButtonMulti.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent evt) {
@@ -112,7 +112,7 @@ public class Main extends javax.swing.JFrame {
                 jRadioButtonDiv = new JRadioButton();
                 getContentPane().add(jRadioButtonDiv);
                 jRadioButtonDiv.setText("/");
-                jRadioButtonDiv.setBounds(60, 131, 144, 20);
+                jRadioButtonDiv.setBounds(80, 131, 144, 20);
                 getButtonGroup().add(jRadioButtonDiv);
                 jRadioButtonDiv.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent evt) {
@@ -124,7 +124,7 @@ public class Main extends javax.swing.JFrame {
                 jButton1 = new JButton();
                 getContentPane().add(jButton1);
                 jButton1.setText("Click on a Radio Button");
-                jButton1.setBounds(60, 260, 173, 23);
+                jButton1.setBounds(80, 260, 173, 23);
                 jButton1.addActionListener(new ActionListener()
                 {
                     public void actionPerformed(ActionEvent evt) {
@@ -148,7 +148,6 @@ public class Main extends javax.swing.JFrame {
                 pack();
                 setSize(400,300);
         } catch (Exception e) {
-            // Error handling here
             e.printStackTrace();
         }
     }
