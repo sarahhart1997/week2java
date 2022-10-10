@@ -1,7 +1,6 @@
 // Imports
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Scanner;
 import java.util.InputMismatchException;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -23,6 +22,8 @@ public class Main extends javax.swing.JFrame {
     private JRadioButton jRadioButtonDiv;
     private JButton jButton1;
     private ButtonGroup buttonGroup;
+    private JTextField field1, field2, field3;
+    int a, b, c;
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
@@ -160,11 +161,13 @@ public class Main extends javax.swing.JFrame {
     }
 
     private void jRadioButtonPlusActionPerformed(ActionEvent evt) {
-        Scanner key = new Scanner(System.in);
         try{
-            int a = key.nextInt();
-            int b = key.nextInt();
-            System.out.println(a + "+" + b + "=" + (a+b));
+            a = Integer.parseInt(field1.getText());
+            b = Integer.parseInt(field2.getText());
+            if(jRadioButtonPlus.isSelected()){
+                c = a + b;
+                field3.setText(String.valueOf(c));
+            }
         } catch (InputMismatchException e) {
             System.out.println("You must enter two numbers.");
         }
@@ -172,11 +175,13 @@ public class Main extends javax.swing.JFrame {
     }
 
     private void jRadioButtonSubActionPerformed(ActionEvent evt) {
-        Scanner key = new Scanner(System.in);
         try{
-            int a = key.nextInt();
-            int b = key.nextInt();
-            System.out.println(a + "-" + b + "=" + (a-b));
+            a = Integer.parseInt(field1.getText());
+            b = Integer.parseInt(field2.getText());
+            if(jRadioButtonSub.isSelected()){
+                c = a - b;
+                field3.setText(String.valueOf(c));
+            }
         } catch (InputMismatchException e) {
             System.out.println("You must enter two numbers.");
         }
@@ -184,11 +189,13 @@ public class Main extends javax.swing.JFrame {
     }
 
     private void jRadioButtonMultiActionPerformed(ActionEvent evt) {
-        Scanner key = new Scanner(System.in);
         try{
-            int a = key.nextInt();
-            int b = key.nextInt();
-            System.out.println(a + "*" + b + "=" + (a*b));
+            a = Integer.parseInt(field1.getText());
+            b = Integer.parseInt(field2.getText());
+            if (jRadioButtonMulti.isSelected()){
+                c = a * b;
+                field3.setText(String.valueOf(c));
+            }
         } catch (InputMismatchException e) {
             System.out.println("You must enter two numbers.");
         }
@@ -196,11 +203,13 @@ public class Main extends javax.swing.JFrame {
     }
 
     private void jRadioButtonDivActionPerformed(ActionEvent evt) {
-        Scanner key = new Scanner(System.in);
         try{
-            int a = key.nextInt();
-            int b = key.nextInt();
-            System.out.println(a + "/" + b + "=" + (a/b));
+            a = Integer.parseInt(field1.getText());
+            b = Integer.parseInt(field2.getText());
+            if (jRadioButtonDiv.isSelected()){
+                c = a / b;
+                field3.setText(String.valueOf(c));
+            }
         } catch (ArithmeticException e) {
             System.out.println("You can not divide by 0.");
         } catch (InputMismatchException e) {
