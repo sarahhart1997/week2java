@@ -9,6 +9,7 @@ import javax.swing.WindowConstants;
 import javax.swing.event.AncestorEvent;
 import javax.swing.event.AncestorListener;
 import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
 import javax.swing.*;
 
 public class Main extends javax.swing.JFrame implements ActionListener {
@@ -42,11 +43,13 @@ public class Main extends javax.swing.JFrame implements ActionListener {
         try {
             setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
             getContentPane().setLayout(null);
-            // Add field 1 to the window
+            // Set Look and Feel for the Window
+            UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+            // Add text field 1 to the window
             JTextField field1 = new JTextField();
             field1.setBounds(25, 60, 25, 30);
             add(field1);
-            // Add field 2 to the window
+            // Add text field 2 to the window
             JTextField field2 = new JTextField();
             field2.setBounds(140, 60, 25, 30);
             add(field2);
@@ -54,7 +57,7 @@ public class Main extends javax.swing.JFrame implements ActionListener {
             JLabel equalsign = new JLabel("=");
             equalsign.setBounds(200, 60, 30, 30);
             add(equalsign);
-            // Add field 3
+            // Add text field 3
             JTextField field3 = new JTextField();
             field3.setBounds (260, 60, 25, 30);
             add(field3);
