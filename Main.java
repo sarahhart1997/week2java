@@ -1,6 +1,8 @@
 // Imports
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Scanner;
+import java.util.InputMismatchException;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JRadioButton;
@@ -133,33 +135,38 @@ public class Main extends javax.swing.JFrame {
     }
 
     private void jRadioButtonPlusActionPerformed(ActionEvent evt) {
-        System.out.println("jRadioButtonPlus.actionPerformed, event="+evt);
+        System.out.println("Addition has been completed"+evt);
     }
 
     private void jRadioButtonSubActionPerformed(ActionEvent evt) {
-        System.out.println("jRadioButtonSub.actionPerformed, event="+evt);
+        System.out.println("Subtraction has been completed"+evt);
     }
 
     private void jRadioButtonMultiActionPerformed(ActionEvent evt) {
-        System.out.println("jRadioButtonMulti.actionPerformed, event="+evt);
+        System.out.println("Multiplication has been completed"+evt);
     }
 
     private void jRadioButtonDivActionPerformed(ActionEvent evt) {
-        System.out.println("jRadioButtonDiv.actionPerformed, event="+evt);
+        Scanner key = new Scanner(System.in);
+        try{
+            int a = key.nextInt();
+            int b = key.nextInt();
+            System.out.println(a + "/" + b + "=" + (a/b));
+        } catch (ArithmeticException e) {
+            System.out.println("You can not divide by 0.");
+        } catch (InputMismatchException e) {
+            System.out.println("You must enter two numbers");
+        }
+        System.out.println("Division has been completed."+evt);
     }
 }
-// A label for the equality sign
-
-// User enters 2 integers in the text fields
-
-// Click on any of the radio buttons
 
 // Result appears in the 3rd text field 
 // Result should be usually non-integer + handled correctly
 // Try catch block for the following
 // Non integer inputs in one or both text fields
 // No input in one or both text fields
-// Division by zerio 
+// Division by zero 
 
 
 // Notes convert both text fields to integer (integer class)
