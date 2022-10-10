@@ -16,22 +16,6 @@ public class Main extends javax.swing.JFrame {
 // Design a window interface
 // Light shade as a background color 
 
-// Window has 3 text fields
-    JTextField field1 = new JTextField();
-    JTextField field2 = new JTextField();
-    JTextField field3 = new JTextField();
-
-    // When mouse clicks after text field immediately convert from sting to Int.
-    public void field1MouseClicked(java.awt.event.MouseEvent evt) {
-       String text = field1.getText();
-       int a = Integer.parseInt(text);
-    }
-
-    private void field2MouseClicked(java.awt.event.MouseEvent evt) {
-        String text = field2.getText();
-        int b = Integer.parseInt(text);
-    }
-
 // Window has 4 radio buttons (+, -, *, /)
     private JRadioButton jRadioButtonPlus;
     private JRadioButton jRadioButtonSub;
@@ -59,13 +43,31 @@ public class Main extends javax.swing.JFrame {
         try {
             setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
             getContentPane().setLayout(null);
+            JTextField field1 = new JTextField();
+            field1.setBounds(10, 60, 25, 21);
+            add(field1);
+
+            // Window has 3 text fields
+    JTextField field2 = new JTextField();
+    JTextField field3 = new JTextField();
+
+    // When mouse clicks after text field immediately convert from string to Int.
+    // public void field1MouseClicked(java.awt.event.MouseEvent evt) {
+    //    String text = field1.getText();
+    //    int a = Integer.parseInt(text);
+    // }
+
+    // private void field2MouseClicked(java.awt.event.MouseEvent evt) {
+    //     String text = field2.getText();
+    //     int b = Integer.parseInt(text);
+    // }
 
             {
                 jRadioButtonPlus = new JRadioButton();
                 getContentPane().add(jRadioButtonPlus);
                 jRadioButtonPlus.setText("+");
                 // x, y, weight, height
-                jRadioButtonPlus.setBounds(32, 26, 135, 20);
+                jRadioButtonPlus.setBounds(60, 26, 135, 20);
                 getButtonGroup().add(jRadioButtonPlus);
                 jRadioButtonPlus.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent evt) {
@@ -77,7 +79,7 @@ public class Main extends javax.swing.JFrame {
                 jRadioButtonSub = new JRadioButton();
                 getContentPane().add(jRadioButtonSub);
                 jRadioButtonSub.setText("-");
-                jRadioButtonSub.setBounds(32, 61, 135, 20);
+                jRadioButtonSub.setBounds(60, 61, 135, 20);
                 getButtonGroup().add(jRadioButtonSub);
                 jRadioButtonSub.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent evt) {
@@ -89,7 +91,7 @@ public class Main extends javax.swing.JFrame {
                 jRadioButtonMulti = new JRadioButton();
                 getContentPane().add(jRadioButtonMulti);
                 jRadioButtonMulti.setText("*");
-                jRadioButtonMulti.setBounds(32, 96, 135, 20);
+                jRadioButtonMulti.setBounds(60, 96, 135, 20);
                 getButtonGroup().add(jRadioButtonMulti);
                 jRadioButtonMulti.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent evt) {
@@ -101,7 +103,7 @@ public class Main extends javax.swing.JFrame {
                 jRadioButtonDiv = new JRadioButton();
                 getContentPane().add(jRadioButtonDiv);
                 jRadioButtonDiv.setText("/");
-                jRadioButtonDiv.setBounds(32, 131, 144, 20);
+                jRadioButtonDiv.setBounds(60, 131, 144, 20);
                 getButtonGroup().add(jRadioButtonDiv);
                 jRadioButtonDiv.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent evt) {
@@ -113,7 +115,7 @@ public class Main extends javax.swing.JFrame {
                 jButton1 = new JButton();
                 getContentPane().add(jButton1);
                 jButton1.setText("Click on a Radio Button");
-                jButton1.setBounds(32, 260, 173, 23);
+                jButton1.setBounds(60, 260, 173, 23);
                 jButton1.addActionListener(new ActionListener()
                 {
                     public void actionPerformed(ActionEvent evt) {
