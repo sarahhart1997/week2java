@@ -45,19 +45,19 @@ public class Main extends javax.swing.JFrame {
             getContentPane().setLayout(null);
             // Add field 1 to the window
             JTextField field1 = new JTextField();
-            field1.setBounds(20, 60, 25, 21);
+            field1.setBounds(25, 60, 25, 30);
             add(field1);
             // Add field 2 to the window
             JTextField field2 = new JTextField();
-            field2.setBounds(120, 60, 25, 21);
+            field2.setBounds(120, 60, 25, 30);
             add(field2);
             // Add = sign label to the window
             JLabel equalsign = new JLabel("=");
-            equalsign.setBounds(150, 60, 25, 21);
+            equalsign.setBounds(150, 60, 30, 30);
             add(equalsign);
             // Add field 3
             JTextField field3 = new JTextField();
-            field3.setBounds (170, 60, 25, 21);
+            field3.setBounds (170, 60, 25, 30);
             add(field3);
     // When mouse clicks after text field immediately convert from string to Int.
     // public void field1MouseClicked(java.awt.event.MouseEvent evt) {
