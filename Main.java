@@ -11,7 +11,7 @@ import javax.swing.event.AncestorListener;
 import javax.swing.SwingUtilities;
 import javax.swing.*;
 
-public class Main extends javax.swing.JFrame {
+public class Main extends javax.swing.JFrame implements ActionListener {
 // Light shade as a background color 
 
 // Window has 4 radio buttons (+, -, *, /)
@@ -110,30 +110,30 @@ public class Main extends javax.swing.JFrame {
                     }
                 });
             }
-            {
-                jButton1 = new JButton();
-                getContentPane().add(jButton1);
-                jButton1.setText("Click on a Radio Button");
-                jButton1.setBounds(80, 260, 173, 23);
-                jButton1.addActionListener(new ActionListener()
-                {
-                    public void actionPerformed(ActionEvent evt) {
-                        // jButton1ActionPerformed(evt);
-                    }
-                });
-                jButton1.addAncestorListener(new AncestorListener()
-                {
-                    public void ancestorMoved(AncestorEvent evt) {
-                        System.out.println("jButton1.ancestorMoved, event="+evt);
-                    }
-                    public void ancestorAdded(AncestorEvent evt) {
-                        // jButton1AncestorAdded(evt);
-                    }
-                    public void ancestorRemoved(AncestorEvent evt) {
-                        System.out.println("jButton1.ancestorRemoved, event="+evt);
-                    }
-                });
-            }
+            // {
+            //     jButton1 = new JButton();
+            //     getContentPane().add(jButton1);
+            //     jButton1.setText("Click on a Radio Button");
+            //     jButton1.setBounds(80, 260, 173, 23);
+            //     jButton1.addActionListener(new ActionListener()
+            //     {
+            //         public void actionPerformed(ActionEvent evt) {
+            //             // jButton1ActionPerformed(evt);
+            //         }
+            //     });
+            //     jButton1.addAncestorListener(new AncestorListener()
+            //     {
+            //         public void ancestorMoved(AncestorEvent evt) {
+            //             System.out.println("jButton1.ancestorMoved, event="+evt);
+            //         }
+            //         public void ancestorAdded(AncestorEvent evt) {
+            //             // jButton1AncestorAdded(evt);
+            //         }
+            //         public void ancestorRemoved(AncestorEvent evt) {
+            //             System.out.println("jButton1.ancestorRemoved, event="+evt);
+            //         }
+            //     });
+            // }
 
                 pack();
                 setSize(400,300);
