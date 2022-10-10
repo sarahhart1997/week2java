@@ -100,7 +100,7 @@ public class RadioButtons extends javax.swing.JFrame {
                 jButton1.addActionListener(new ActionListener()
                 {
                     public void actionPerformed(ActionEvent evt) {
-                        jButton1ActionPerformed(evt);
+                        // jButton1ActionPerformed(evt);
                     }
                 });
                 jButton1.addAncestorListener(new AncestorListener()
@@ -109,7 +109,7 @@ public class RadioButtons extends javax.swing.JFrame {
                         System.out.println("jButton1.ancestorMoved, event="+evt);
                     }
                     public void ancestorAdded(AncestorEvent evt) {
-                        jButton1AncestorAdded(evt);
+                        // jButton1AncestorAdded(evt);
                     }
                     public void ancestorRemoved(AncestorEvent evt) {
                         System.out.println("jButton1.ancestorRemoved, event="+evt);
