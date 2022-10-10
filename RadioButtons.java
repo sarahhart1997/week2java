@@ -20,10 +20,7 @@ public class RadioButtons extends javax.swing.JFrame {
     private JRadioButton jRadioButtonSub;
     private JRadioButton jRadioButtonMulti;
     private JRadioButton jRadioButtonDiv;
-    private JButton jButtonPlus;
-    private JButton jButtonSub;
-    private JButton jButtonMulti;
-    private JButton jButtonDiv;
+    private JButton jButton1;
     private ButtonGroup buttonGroup;
 
     public static void main(String[] args) {
@@ -95,19 +92,61 @@ public class RadioButtons extends javax.swing.JFrame {
                     }
                 });
             }
+            {
+                jButton1 = new JButton();
+                getContentPane().add(jButton1);
+                jButton1.setText("Click on a Radio Button");
+                jButton1.setBounds(32, 260, 173, 23);
+                jButton1.addActionListener(new ActionListener()
+                {
+                    public void actionPerformed(ActionEvent evt) {
+                        jButton1ActionPerformed(evt);
+                    }
+                });
+                jButton1.addAncestorListener(new AncestorListener()
+                {
+                    public void ancestorMoved(AncestorEvent evt) {
+                        System.out.printIn("jButton1.ancestorMoved, event="+evt);
+                    }
+                    public void ancestorAdded(AncestorEvent evt) {
+                        jButton1AncestorAdded(evt);
+                    }
+                    public void ancestorRemoved(AncestorEvent evt) {
+                        System.out.printIn("jButton1.ancestorRemoved, event="+evt);
+                    }
+                });
+            }
 
-            // Making sure the selection moves between jButtons???
-
+                pack();
+                setSize(400,300);
+        } catch (Exception e) {
+            // Error handling here
+            e.printStackTrace();
         }
     }
-    private ButtonGroup getButtonGroup() {
-		if(buttonGroup == null) {
-			buttonGroup = new ButtonGroup();
-		}
-		return buttonGroup;
-	}
 
-}
+    private ButtonGroup getButtonGroup() {
+        if(buttonGroup == null) {
+            buttonGroup = new ButtonGroup();
+        }
+        return buttonGroup;
+    }
+
+    private void jRadioButtonPlusActionPerformed(ActionEvent evt) {
+        System.out.println("jRadioButtonPlus.actionPerformed, event="+evt);
+    }
+
+    private void jRadioButtonSubActionPerformed(ActionEvent evt) {
+        System.out.println("jRadioButtonSub.actionPerformed, event="+evt);
+    }
+
+    private void jRadioButtonMultiActionPerformed(ActionEvent evt) {
+        System.out.println("jRadioButtonMulti.actionPerformed, event="+evt);
+    }
+
+    private void jRadioButtonDivActionPerformed(ActionEvent evt) {
+        System.out.println("jRadioButtonDiv.actionPerformed, event="+evt);
+    }
 // A label for the equality sign
 
 // User enters 2 integers in the text fields
