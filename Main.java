@@ -44,7 +44,7 @@ public class Main extends javax.swing.JFrame {
             setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
             getContentPane().setLayout(null);
             JTextField field1 = new JTextField();
-            field1.setBounds(10, 60, 25, 21);
+            field1.setBounds(20, 60, 25, 21);
             add(field1);
 
             // Window has 3 text fields
