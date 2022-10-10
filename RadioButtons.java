@@ -106,13 +106,13 @@ public class RadioButtons extends javax.swing.JFrame {
                 jButton1.addAncestorListener(new AncestorListener()
                 {
                     public void ancestorMoved(AncestorEvent evt) {
-                        System.out.printIn("jButton1.ancestorMoved, event="+evt);
+                        System.out.println("jButton1.ancestorMoved, event="+evt);
                     }
                     public void ancestorAdded(AncestorEvent evt) {
                         jButton1AncestorAdded(evt);
                     }
                     public void ancestorRemoved(AncestorEvent evt) {
-                        System.out.printIn("jButton1.ancestorRemoved, event="+evt);
+                        System.out.println("jButton1.ancestorRemoved, event="+evt);
                     }
                 });
             }
@@ -147,6 +147,7 @@ public class RadioButtons extends javax.swing.JFrame {
     private void jRadioButtonDivActionPerformed(ActionEvent evt) {
         System.out.println("jRadioButtonDiv.actionPerformed, event="+evt);
     }
+}
 // A label for the equality sign
 
 // User enters 2 integers in the text fields
