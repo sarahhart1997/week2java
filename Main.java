@@ -15,7 +15,7 @@ import javax.swing.SwingUtilities;
 // Window has 3 text fields
 
 // Window has 4 radio buttons (+, -, *, /)
-public class RadioButtons extends javax.swing.JFrame {
+public class Main extends javax.swing.JFrame {
     private JRadioButton jRadioButtonPlus;
     private JRadioButton jRadioButtonSub;
     private JRadioButton jRadioButtonMulti;
@@ -26,14 +26,14 @@ public class RadioButtons extends javax.swing.JFrame {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                RadioButtons inst = new RadioButtons();
+                Main inst = new Main();
                 inst.setLocationRelativeTo(null);
                 inst.setVisible(true);
             }
         });
     }
 
-    public RadioButtons(){
+    public Main(){
         super();
         initGUI();
     }
