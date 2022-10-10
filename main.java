@@ -41,7 +41,62 @@ public class RadioButtons extends javax.swing.JFrame {
         initGUI();
     }
 
-    
+    private void initGUI() {
+        try {
+            setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+            getContentPane().setLayout(null);
+
+            {
+                jRadioButtonPlus = new JRadioButton();
+                getContentPane().add(jRadioButtonPlus);
+                jRadioButtonPlus.setText("+");
+                // x, y, weight, height
+                jRadioButtonPlus.setBounds(32, 26, 135, 20);
+                getButtonGroup().add(jRadioButtonPlus);
+                jRadioButtonPlus.addActionListener(new ActionListner() {
+                    public void actionPerformed(ActionEvent evt) {
+                        jRadioButtonPlusActionPerformed(evt);
+                    }
+                });
+            }
+            {
+                jRadioButtonSub = new JRadioButton();
+                getContentPane().add(jRadioButtonSub);
+                jRadioButtonSub.setText("-");
+                jRadioButtonSub.setBounds(32, 61, 135, 20);
+                getButtonGroup().add(jRadioButtonSub);
+                jRadioButtonSub.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent evt) {
+                        jRadioButtonSubActionPerformed(evt);
+                    }
+                });
+            }
+            {
+                jRadioButtonMulti = new JRadioButton();
+                getContentPane().add(jRadioButtonMulti);
+                jRadioButtonMulti.setText("*");
+                jRadioButtonMulti.setBounds(32, 96, 135, 20);
+                getButtonGroup().add(jRadioButtonMulti);
+                jRadioButtonMulti.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent evt) {
+                        jRadioButtonMultiActionPerformed(evt);
+                    }
+                });
+            }
+            {
+                jRadioButtonDiv = new jRadioButtonDiv();
+                getContentPane().add(jRadioButtonDiv);
+                jRadioButtonDiv.setText("/");
+                jRadioButtonDiv.setBounds(32, 131, 144, 20);
+                getButtonGroup().add(jRadioButtonDiv);
+                jRadioButtonDiv.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent evt) {
+                        jRadioButtonDivActionPerformed(evt);
+                    }
+                });
+            }
+        }
+    }
 }
 // A label for the equality sign
 
