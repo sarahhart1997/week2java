@@ -10,6 +10,7 @@ import javax.swing.WindowConstants;
 import javax.swing.event.AncestorEvent;
 import javax.swing.event.AncestorListener;
 import javax.swing.SwingUtilities;
+import javax.swing.*;
 
 // Design a window interface
 // Light shade as a background color 
@@ -135,14 +136,38 @@ public class Main extends javax.swing.JFrame {
     }
 
     private void jRadioButtonPlusActionPerformed(ActionEvent evt) {
+        Scanner key = new Scanner(System.in);
+        try{
+            int a = key.nextInt();
+            int b = key.nextInt();
+            System.out.println(a + "+" + b + "=" + (a+b));
+        } catch (InputMismatchException e) {
+            System.out.println("You must enter two numbers.");
+        }
         System.out.println("Addition has been completed"+evt);
     }
 
     private void jRadioButtonSubActionPerformed(ActionEvent evt) {
+        Scanner key = new Scanner(System.in);
+        try{
+            int a = key.nextInt();
+            int b = key.nextInt();
+            System.out.println(a + "-" + b + "=" + (a-b));
+        } catch (InputMismatchException e) {
+            System.out.println("You must enter two numbers.");
+        }
         System.out.println("Subtraction has been completed"+evt);
     }
 
     private void jRadioButtonMultiActionPerformed(ActionEvent evt) {
+        Scanner key = new Scanner(System.in);
+        try{
+            int a = key.nextInt();
+            int b = key.nextInt();
+            System.out.println(a + "*" + b + "=" + (a*b));
+        } catch (InputMismatchException e) {
+            System.out.println("You must enter two numbers.");
+        }
         System.out.println("Multiplication has been completed"+evt);
     }
 
@@ -155,7 +180,7 @@ public class Main extends javax.swing.JFrame {
         } catch (ArithmeticException e) {
             System.out.println("You can not divide by 0.");
         } catch (InputMismatchException e) {
-            System.out.println("You must enter two numbers");
+            System.out.println("You must enter two numbers.");
         }
         System.out.println("Division has been completed."+evt);
     }
