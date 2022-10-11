@@ -8,7 +8,6 @@ public class Main extends javax.swing.JFrame implements ActionListener {
 
 // Window has 4 radio buttons (+, -, *, /)
     private JRadioButton jRadioButtonPlus, jRadioButtonSub, jRadioButtonMulti, jRadioButtonDiv;
-    private ButtonGroup buttonGroup;
     private JTextField field1, field2, field3;
     JLabel equalsign;
     int a, b, c;
