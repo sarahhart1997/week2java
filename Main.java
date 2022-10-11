@@ -1,222 +1,109 @@
 // Imports
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.InputMismatchException;
-import javax.swing.ButtonGroup;
-import javax.swing.JButton;
-import javax.swing.JRadioButton;
-import javax.swing.WindowConstants;
-import javax.swing.event.AncestorEvent;
-import javax.swing.event.AncestorListener;
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
-import javax.swing.*;
 
 public class Main extends javax.swing.JFrame implements ActionListener {
 
 // Window has 4 radio buttons (+, -, *, /)
-    private JRadioButton jRadioButtonPlus;
-    private JRadioButton jRadioButtonSub;
-    private JRadioButton jRadioButtonMulti;
-    private JRadioButton jRadioButtonDiv;
-    private JButton jButton1;
+    private JRadioButton jRadioButtonPlus, jRadioButtonSub, jRadioButtonMulti, jRadioButtonDiv;
     private ButtonGroup buttonGroup;
     private JTextField field1, field2, field3;
+    JLabel equalsign;
     int a, b, c;
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                Main inst = new Main();
-                inst.setLocationRelativeTo(null);
-                inst.setVisible(true);
+        Main inst = new Main();
+        inst.initGUI();
             }
-        });
+    
+    // UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+
+    public void initGUI() {
+        setSize(400,300);
+        Container calc = getContentPane();
+        calc.setLayout(null);
+
+        // Creating text fields + Equals sign Label
+        field1 = new JTextField();
+        field1.setBounds(30, 75, 70, 25);
+
+        field2 = new JTextField();
+        field2.setBounds(140, 75, 70, 25);
+
+        equalsign = new JLabel("=");
+        equalsign.setBounds(220, 75, 70, 25);
+
+        field3 = new JTextField();
+        field3.setBounds(240, 75, 70, 25);
+
+        calc.add(field1);
+        calc.add(field2);
+        calc.add(equalsign);
+        calc.add(field3);
+
+        // Create Radio Buttons
+        jRadioButtonPlus = new JRadioButton("+");
+        jRadioButtonPlus.setBounds(100, 35, 35, 50);
+        calc.add(jRadioButtonPlus);
+
+        jRadioButtonSub = new JRadioButton("-");
+        jRadioButtonSub.setBounds(100, 65, 35, 50);
+        calc.add(jRadioButtonSub);
+
+        jRadioButtonMulti = new JRadioButton("*");
+        jRadioButtonMulti.setBounds(100, 95, 35, 50);
+        calc.add(jRadioButtonMulti);
+
+        jRadioButtonDiv = new JRadioButton("/");
+        jRadioButtonDiv.setBounds(100, 125, 35, 50);
+        calc.add(jRadioButtonDiv);
+
+        jRadioButtonPlus.addActionListener(this);
+        jRadioButtonSub.addActionListener(this);
+        jRadioButtonMulti.addActionListener(this);
+        jRadioButtonDiv.addActionListener(this);
+
+        ButtonGroup buttonGroup = new ButtonGroup();
+        buttonGroup.add(jRadioButtonPlus);
+        buttonGroup.add(jRadioButtonSub);
+        buttonGroup.add(jRadioButtonMulti);
+        buttonGroup.add(jRadioButtonDiv);
+
+        setVisible(true);
     }
 
-    public Main(){
-        super();
-        initGUI();
-    }
-
-    private void initGUI() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
         try {
-            setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-            getContentPane().setLayout(null);
-            // Set Look and Feel for the Window
-            UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
-            // Add text field 1 to the window
-            JTextField field1 = new JTextField();
-            field1.setBounds(25, 60, 25, 30);
-            add(field1);
-            // Add text field 2 to the window
-            JTextField field2 = new JTextField();
-            field2.setBounds(140, 60, 25, 30);
-            add(field2);
-            // Add = sign label to the window
-            JLabel equalsign = new JLabel("=");
-            equalsign.setBounds(200, 60, 30, 30);
-            add(equalsign);
-            // Add text field 3
-            JTextField field3 = new JTextField();
-            field3.setBounds (260, 60, 25, 30);
-            add(field3);
-
-            // Create the radio buttons
-            {
-                jRadioButtonPlus = new JRadioButton();
-                getContentPane().add(jRadioButtonPlus);
-                jRadioButtonPlus.setText("+");
-                // x, y, width, height
-                jRadioButtonPlus.setBounds(80, 26, 135, 20);
-                getButtonGroup().add(jRadioButtonPlus);
-                jRadioButtonPlus.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent evt) {
-                        jRadioButtonPlusActionPerformed(evt);
-                    }
-                });
-            }
-            {
-                jRadioButtonSub = new JRadioButton();
-                getContentPane().add(jRadioButtonSub);
-                jRadioButtonSub.setText("-");
-                jRadioButtonSub.setBounds(80, 61, 135, 20);
-                getButtonGroup().add(jRadioButtonSub);
-                jRadioButtonSub.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent evt) {
-                        jRadioButtonSubActionPerformed(evt);
-                    }
-                });
-            }
-            {
-                jRadioButtonMulti = new JRadioButton();
-                getContentPane().add(jRadioButtonMulti);
-                jRadioButtonMulti.setText("*");
-                jRadioButtonMulti.setBounds(80, 96, 135, 20);
-                getButtonGroup().add(jRadioButtonMulti);
-                jRadioButtonMulti.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent evt) {
-                        jRadioButtonMultiActionPerformed(evt);
-                    }
-                });
-            }
-            {
-                jRadioButtonDiv = new JRadioButton();
-                getContentPane().add(jRadioButtonDiv);
-                jRadioButtonDiv.setText("/");
-                jRadioButtonDiv.setBounds(80, 131, 144, 20);
-                getButtonGroup().add(jRadioButtonDiv);
-                jRadioButtonDiv.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent evt) {
-                        jRadioButtonDivActionPerformed(evt);
-                    }
-                });
-            }
-            // {
-            //     jButton1 = new JButton();
-            //     getContentPane().add(jButton1);
-            //     jButton1.setText("Click on a Radio Button");
-            //     jButton1.setBounds(80, 260, 173, 23);
-            //     jButton1.addActionListener(new ActionListener()
-            //     {
-            //         public void actionPerformed(ActionEvent evt) {
-            //             // jButton1ActionPerformed(evt);
-            //         }
-            //     });
-            //     jButton1.addAncestorListener(new AncestorListener()
-            //     {
-            //         public void ancestorMoved(AncestorEvent evt) {
-            //             System.out.println("jButton1.ancestorMoved, event="+evt);
-            //         }
-            //         public void ancestorAdded(AncestorEvent evt) {
-            //             // jButton1AncestorAdded(evt);
-            //         }
-            //         public void ancestorRemoved(AncestorEvent evt) {
-            //             System.out.println("jButton1.ancestorRemoved, event="+evt);
-            //         }
-            //     });
-            // }
-
-                pack();
-                setSize(400,300);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    private ButtonGroup getButtonGroup() {
-        if(buttonGroup == null) {
-            buttonGroup = new ButtonGroup();
-        }
-        return buttonGroup;
-    }
-
-    private void jRadioButtonPlusActionPerformed(ActionEvent evt) {
-        try{
             a = Integer.parseInt(field1.getText());
             b = Integer.parseInt(field2.getText());
-            if(jRadioButtonPlus.isSelected()){
+            if (jRadioButtonPlus.isSelected()) {
                 c = a + b;
                 field3.setText(String.valueOf(c));
             }
-        } catch (InputMismatchException e) {
-            System.out.println("You must enter two numbers.");
-        }
-        System.out.println("Addition has been completed"+evt);
-    }
-
-    private void jRadioButtonSubActionPerformed(ActionEvent evt) {
-        try{
-            a = Integer.parseInt(field1.getText());
-            b = Integer.parseInt(field2.getText());
-            if(jRadioButtonSub.isSelected()){
+            else if (jRadioButtonSub.isSelected()) {
                 c = a - b;
                 field3.setText(String.valueOf(c));
             }
-        } catch (InputMismatchException e) {
-            System.out.println("You must enter two numbers.");
-        }
-        System.out.println("Subtraction has been completed"+evt);
-    }
-
-    private void jRadioButtonMultiActionPerformed(ActionEvent evt) {
-        try{
-            a = Integer.parseInt(field1.getText());
-            b = Integer.parseInt(field2.getText());
-            if (jRadioButtonMulti.isSelected()){
+            else if (jRadioButtonMulti.isSelected()) {
                 c = a * b;
                 field3.setText(String.valueOf(c));
             }
-        } catch (InputMismatchException e) {
-            System.out.println("You must enter two numbers.");
-        }
-        System.out.println("Multiplication has been completed"+evt);
-    }
-
-    private void jRadioButtonDivActionPerformed(ActionEvent evt) {
-        try{
-            a = Integer.parseInt(field1.getText());
-            b = Integer.parseInt(field2.getText());
-            if (jRadioButtonDiv.isSelected()){
-                c = a / b;
-                field3.setText(String.valueOf(c));
+            else if (jRadioButtonDiv.isSelected()) {
+                if (b==0) {
+                    JOptionPane.showMessageDialog(null, "Sorry, unfortunately you can not divide by 0!");
+                }
+                else {
+                    float divc = ((float)a/b);
+                    field3.setText(String.valueOf(divc));
+                }
             }
-        } catch (ArithmeticException e) {
-            System.out.println("You can not divide by 0.");
-        } catch (InputMismatchException e) {
-            System.out.println("You must enter two numbers.");
         }
-        System.out.println("Division has been completed."+evt);
+
+        catch (IllegalArgumentException exception) {
+            JOptionPane.showMessageDialog(null, "You must enter 2 numbers to run the program.");
+        }
     }
 }
-
-// Result appears in the 3rd text field 
-// Result should be usually non-integer + handled correctly
-// Try catch block for the following
-// Non integer inputs in one or both text fields
-// No input in one or both text fields
-// Division by zero 
-
-
-// Notes convert both text fields to integer (integer class)
-// Your program must issue an error message by a dialog box
